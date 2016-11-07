@@ -22,7 +22,7 @@ lines(data1a$DateTime, data1a$Sub_metering_3, col="blue")
 
 
 legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, 
-       legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+       legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), cex=0.8)
 
 dev.off()
 

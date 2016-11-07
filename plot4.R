@@ -27,14 +27,14 @@ with(data1a, plot(DateTime, Sub_metering_1,
                   type="l", xlab="",ylab="Energy sub metering"))
 lines(data1a$DateTime, data1a$Sub_metering_2, col="red")
 lines(data1a$DateTime, data1a$Sub_metering_3, col="blue")
-legend("topright", lty=c(1,1,1), bty="n", col = c("black", "red", "blue"), 
+legend(x="topright",y=1, lty=c(1,1,1), cex=0.8, border="n",bty="n", col = c("black", "red", "blue"), 
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3" ))
-
 #graph4
 with(data1a, plot(DateTime, Global_reactive_power, 
                   type="l", xlab="datetime",ylab="Global Reactive Power"))
 
 dev.copy(png, "plot4.png")
+
 dev.off()
 
 
