@@ -6,7 +6,7 @@ data1$Date<- as.Date(data1$Date, "%d/%m/%Y")
 
 data1a <- subset(data1, Date >= "2007-02-01" & Date <= "2007-02-02")
 
-data1a$Global_active_power<- as.numeric(data1a$Global_active_power)
+data1a$Global_active_power<- as.numeric(as.character(data1a$Global_active_power))
 
 hist(data1a$Global_active_power, 
      col="red",

@@ -6,13 +6,13 @@ data1$Date<- as.Date(data1$Date, "%d/%m/%Y")
 
 data1a <- subset(data1, Date >= "2007-02-01" & Date <= "2007-02-02")
 
-data1a$Global_active_power<- as.numeric(data1a$Global_active_power)
+data1a$Global_active_power<- as.numeric(as.character(data1a$Global_active_power))
 data1a$DateTime <- paste(data1a$Date, data1a$Time)
 
 data1a$DateTime1 <- as.POSIXct(data1a$DateTime)
 
 png("plot2.png", width=480, height=480)
-with(data1a, plot(DateTime1, Global_active_power/1000, 
+with(data1a, plot(DateTime1, Global_active_power, 
                   type="l", xlab="",ylab="Global Active Power (kilowatts)"))
 
 dev.off()
