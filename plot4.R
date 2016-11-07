@@ -12,9 +12,9 @@ data1a$Sub_metering_2<- as.numeric(as.character(data1a$Sub_metering_2))
 data1a$Sub_metering_3<- as.numeric(as.character(data1a$Sub_metering_3))
 data1a$DateTime <- as.POSIXct(paste(data1a$Date, data1a$Time),format="%Y-%m-%d %H:%M:%S")
 
-
+png("plot4.png", width=480, height=480)
 par(mfrow=c(2,2))
-#png("plot4.png", width=480, height=480)
+
 
 #graph1
 with(data1a, plot(DateTime, Global_active_power, 
@@ -27,13 +27,13 @@ with(data1a, plot(DateTime, Sub_metering_1,
                   type="l", xlab="",ylab="Energy sub metering"))
 lines(data1a$DateTime, data1a$Sub_metering_2, col="red")
 lines(data1a$DateTime, data1a$Sub_metering_3, col="blue")
-legend(x="topright",y=1, lty=c(1,1,1), cex=0.8, border="n",bty="n", col = c("black", "red", "blue"), 
+legend(x="topright",y=1, lty=c(1,1,1), cex=0.7, border="n",bty="n", col = c("black", "red", "blue"), 
        legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3" ))
 #graph4
 with(data1a, plot(DateTime, Global_reactive_power, 
                   type="l", xlab="datetime",ylab="Global Reactive Power"))
 
-dev.copy(png, "plot4.png")
+#dev.copy(png, "plot4.png")
 
 dev.off()
 
